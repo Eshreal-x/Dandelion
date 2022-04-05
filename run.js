@@ -1,10 +1,5 @@
 /* TODO
-    -SETLIST Needs to not have changed registers or Data needs to be original. fix required -> look at opcode. (Only edge case)
-    If C is 0, the next instruction is cast as an integer, and used as the C value.
-    This happens only when operand C is unable to encode the block number,
-    i.e. when C > 511, equivalent to an array index greater than 25550.
-
-    
+   
 */
 
 const fs = require('fs');
