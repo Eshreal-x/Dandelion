@@ -1,5 +1,5 @@
 --[[
-   Tests all opcodes eccept CLOSE.
+   Tests all opcodes except CLOSE.
 ]]--
 
 local time = os.time();
