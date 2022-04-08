@@ -65,7 +65,7 @@ async function Obfuscate() {
 
 
     fs.writeFileSync("BT.txt", OldBytecode);
-    fs.writeFileSync("VM.txt", MinifiedVM, {encoding:'ascii'});
+    fs.writeFileSync("VM.txt", MinifiedVM);
 }
 
 
