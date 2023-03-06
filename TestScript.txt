@@ -1,0 +1,108 @@
+--[[
+   Tests all opcodes except CLOSE.
+]]--
+
+local time = os.time();
+
+math.randomseed(os.time());
+
+local a = 1;
+local b = 2;
+local abc = "Hello world";
+local knil = nil;
+print("----< Math >----")
+
+print(a+b+5);
+print(a-5-b);
+print(5*b*a);
+print(5/8/b);
+print(a%b%5);
+print(5^b^a^5);
+
+print("---------eq,lt,le--------");
+
+print(a == b);
+print(5<3);
+print(8>=3);
+
+print("---------")
+
+
+
+
+local a = "";
+
+for i=97,97+26 do
+   a=a..string.char(i);  
+end;
+
+print(a)
+
+print('---------self & setglobal----------');
+
+p = {};
+p[1] = "foo";
+
+p.abc = function(self, a, b)
+  print(a, b, self);
+end
+
+
+
+p:abc(5, false);
+
+local qdq,dqd = 10,false; qdq,dqd = -qdq,not dqd
+
+
+print("----varargs, call, tailcall ----  & other stuff-----");
+local tailcall = function(abc)
+   return abc+3;
+end
+
+
+local d = function(c,...)
+   local k = {...};
+	
+   abc = ":)";
+   print(c,unpack(k), abc, knil);
+
+   return tailcall(c);
+end;
+
+local tbl = {}
+for i=1, math.random(1,5) do
+   table.insert(tbl, string.char(97+i));
+end;
+
+
+
+d(#tbl, unpack(tbl))
+
+print("---------tforloop------")
+for i,v in pairs(tbl) do print(i,v) end
+
+print("------< test & testset >---------");
+do 
+local a,b,c; c = a and b
+end
+
+do 
+local a,b; a = a and b
+end
+
+print("Complete")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
